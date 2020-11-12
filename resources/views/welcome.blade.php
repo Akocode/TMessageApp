@@ -62,6 +62,11 @@
                 margin-bottom: 30px;
             }
         </style> --}}
+        <style>
+            body{
+                background: #16F4D0
+            }
+        </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">

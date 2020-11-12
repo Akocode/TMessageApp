@@ -7,7 +7,7 @@
             </div>
             <div class="phone">
                 <label for="phone" class="phone_label">Receipent(s) Number:</label>
-                <textarea name="" id="" cols="30" rows="5"></textarea>
+                <textarea name="" id="" cols="45" rows="13"></textarea>
                 <!-- <input type="tel" class="phone_input" placeholder="seperate multiple numbers with ,"> -->
             </div>
             <div class="message">
@@ -30,12 +30,8 @@ export default {
 <style scoped>
 .container{
     height: 85vh;
-    margin: 0px 10px 10px 10px;
+    
 }
-/* .form_submit{
-    display: flex;
-    flex-direction: column;
-} */
 
 .name{
     display: flex;

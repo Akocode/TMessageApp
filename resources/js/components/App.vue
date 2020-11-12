@@ -1,17 +1,14 @@
 <template>
     <div class="parent">
         <header class="nav_bar">
-            header
-        </header>
-        <div class="side_bar">
             <SideBar></SideBar>
-        </div>
+        </header>
         <main class="main_container">
             <Main></Main>
         </main>
         <footer class="foot">
             <!-- <h2>Foot</h2> -->
-            foot
+            @GBEMIGA
         </footer>
     </div>
 </template>
@@ -34,7 +31,7 @@ import SideBar from './SideBar'
     /* min-height: 100vh; */
     padding: 0;
     margin: 0;
-    background-color: #16F4D0;
+    /* background-color: #16F4D0; */
      font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -43,20 +40,19 @@ import SideBar from './SideBar'
 .parent{
     display: grid;
     grid-template: auto 1fr auto / auto 1fr auto ;
+    background: #16F4D0;
 }
 
 .nav_bar{
-    padding: 1rem;
+    /* padding: 1rem; */
     grid-column: 1 / 4;
-}
-
-.side_bar{
-    grid-column: 1/2;
-    border: 10px solid black;
+    background:  #545454;
 }
 
 .main_container{
-    grid-column: 2/4;
+    grid-column: 1/4;
+    display: grid;
+    place-items: center;
 }
 
 .foot{
