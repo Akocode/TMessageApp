@@ -28,12 +28,12 @@
                     </li>
                 </div>
                 <div class="auth">
-                    <!-- <li>
+                    <li>
                         <a href="" class="navbar__single-link">LOGIN</a>
                     </li>
                     <li>
                         <a href="" class="navbar__single-link">REGISTER</a>
-                    </li> -->
+                    </li>
                 </div>
             </ul>
         </nav>
@@ -46,17 +46,18 @@ export default {
 </script>
 
 <style scoped>
-.sidebar{
-    /* margin: 0px 19px 0px 17px; */
-}
+/* .sidebar{
+    margin: 0px 19px 0px 17px;
+} */
 
 ul{
     list-style-type: none;
     overflow: inherit;
+    justify-content: space-between;
 }
 
 .navbar__links{
-    /* display: flex; */
+    display: flex;
 }
 
 .basic{

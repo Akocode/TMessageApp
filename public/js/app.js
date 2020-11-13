@@ -1971,7 +1971,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'Main',
+  data: function data() {
+    return {
+      name: '',
+      phone: '',
+      message: ''
+    };
+  },
+  methods: {
+    snackBar: function snackBar() {
+      if (this.name == '' || this.phone == '' || this.message == '') {
+        var y = this.$refs.snackbar;
+        y.innerHTML = 'Message Not Sent. Please Fill in All Fields';
+        y.className = 'show';
+        setTimeout(function () {
+          y.className = y.className.replace('show', '');
+        }, 3000);
+      } else {
+        var x = this.$refs.snackbar;
+        x.innerHTML = 'Message Sent';
+        x.className = 'show';
+        setTimeout(function () {
+          x.className = x.className.replace('show', '');
+        }, 3000);
+      }
+    }
+  }
+});
 
 /***/ }),
 
@@ -6489,7 +6519,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.container[data-v-b9c20fb8]{\r\n    height: 85vh;\n}\n.name[data-v-b9c20fb8]{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\n}\n.phone[data-v-b9c20fb8]{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\n}\n.message[data-v-b9c20fb8]{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\n}\n.btn_container[data-v-b9c20fb8]{\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 10px;\n}\ninput[data-v-b9c20fb8]{\r\n    height: 20px;\r\n    /* width: 50%; */\r\n    padding: 5px;\r\n    background-color: #ECEBE4;\r\n    border: none;\r\n    border-radius: 16px 0px 16px 0px;\r\n    font-size: 15px;\r\n    outline: none;\r\n    transition: 0.4s;\n}\ntextarea[data-v-b9c20fb8]{\r\n    padding: 5px;\r\n    background-color: #ECEBE4;\r\n    border: none;\r\n    outline: none;\r\n    border-radius: 16px 0px 16px 0px;\r\n    transition: 0.4s;\n}\nbutton[data-v-b9c20fb8]{\r\n    /* border: none; */\r\n    border-radius: 5px;\r\n    padding: 5px 20px;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n    /* outline: none; */\n}\nbutton[data-v-b9c20fb8]:hover{\r\n    background-color: aqua;\n}\ninput[data-v-b9c20fb8]:focus{\r\n    border-radius: 0px 16px 0px 16px;\n}\ntextarea[data-v-b9c20fb8]:focus{\r\n    border-radius: 0px 16px 0px 16px;\n}\r\n", ""]);
+exports.push([module.i, "\n.container[data-v-b9c20fb8]{\r\n    height: 85vh;\n}\n.name[data-v-b9c20fb8]{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\n}\n.phone[data-v-b9c20fb8]{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\n}\n.message[data-v-b9c20fb8]{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\n}\n.btn_container[data-v-b9c20fb8]{\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 10px;\n}\ninput[data-v-b9c20fb8]{\r\n    height: 20px;\r\n    /* width: 50%; */\r\n    padding: 5px;\r\n    background-color: #ECEBE4;\r\n    border: none;\r\n    border-radius: 16px 0px 16px 0px;\r\n    font-size: 15px;\r\n    outline: none;\r\n    transition: 0.4s;\n}\ntextarea[data-v-b9c20fb8]{\r\n    padding: 5px;\r\n    background-color: #ECEBE4;\r\n    border: none;\r\n    outline: none;\r\n    border-radius: 16px 0px 16px 0px;\r\n    transition: 0.4s;\n}\nbutton[data-v-b9c20fb8]{\r\n    /* border: none; */\r\n    border-radius: 5px;\r\n    padding: 5px 20px;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n    /* outline: none; */\n}\nbutton[data-v-b9c20fb8]:hover{\r\n    background-color: aqua;\n}\ninput[data-v-b9c20fb8]:focus{\r\n    border-radius: 0px 16px 0px 16px;\n}\ntextarea[data-v-b9c20fb8]:focus{\r\n    border-radius: 0px 16px 0px 16px;\n}\n#snackbar[data-v-b9c20fb8] {\r\n  visibility: hidden;\r\n  min-width: 250px;\r\n  margin-left: -125px;\r\n  background-color: #333;\r\n  color: #fff;\r\n  text-align: center;\r\n  border-radius: 2px;\r\n  padding: 16px;\r\n  position: fixed;\r\n  z-index: 1;\r\n  left: 50%;\r\n  bottom: 30px;\n}\n#snackbar.show[data-v-b9c20fb8] {\r\n  visibility: visible;\r\n  -webkit-animation: fadein-data-v-b9c20fb8 0.5s,fadeout-data-v-b9c20fb8 0.5s 2.5s;\r\n  animation: fadein-data-v-b9c20fb8 0.5s,fadeout-data-v-b9c20fb8 0.5s 2.5s;\n}\n@-webkit-keyframes fadein-data-v-b9c20fb8 {\nfrom {bottom: 0; opacity: 0;}\nto {bottom: 30px; opacity: 1;}\n}\n@keyframes fadein-data-v-b9c20fb8 {\nfrom {bottom: 0; opacity: 0;}\nto {bottom: 30px; opacity: 1;}\n}\n@-webkit-keyframes fadeout-data-v-b9c20fb8 {\nfrom {bottom: 30px; opacity: 1;}\nto {bottom: 0; opacity: 0;}\n}\n@keyframes fadeout-data-v-b9c20fb8 {\nfrom {bottom: 30px; opacity: 1;}\nto {bottom: 0; opacity: 0;}\n}\r\n", ""]);
 
 // exports
 
@@ -6508,7 +6538,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.sidebar[data-v-223abea1]{\r\n    /* margin: 0px 19px 0px 17px; */\n}\nul[data-v-223abea1]{\r\n    list-style-type: none;\r\n    overflow: inherit;\n}\n.navbar__links[data-v-223abea1]{\r\n    /* display: flex; */\n}\n.basic[data-v-223abea1]{\r\n    display: flex;\r\n    font-weight: 900;\n}\n.auth[data-v-223abea1]{\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    font-weight: 900;\r\n    /* /* float: right; */\n}\nli a[data-v-223abea1]{\r\n    text-decoration: none;\r\n    display: block;\r\n    color:  #6baa75;\r\n    text-align: center;\r\n    padding: 14px 16px;\n}\nli a[data-v-223abea1]:hover{\r\n    background-color: #111;\n}\n.navbar__header[data-v-223abea1]{\r\n    display: none;\n}\n@media screen and (max-width: 600px) {\n.basic[data-v-223abea1] {\r\n    display: flex;\r\n    flex-direction: column;\n}\n.sidebar[data-v-223abea1]{\r\n      margin: 0px;\n}\n.navbar__header[data-v-223abea1] {\r\n        display: flex;\r\n        justify-content: space-between;\r\n        padding: 0.5rem 1rem;\r\n        background: #545454;\r\n        border-bottom: 0.3rem solid #6baa75;\n}\n.navbar__btn[data-v-223abea1] {\r\n        align-self: center;\r\n        border: 5px solid #6baa75;\r\n        cursor: pointer;\n}\n.navbar__btns[data-v-223abea1] {\r\n        align-self: center;\r\n        font-weight: 900;\r\n        background: #545454;\n}\n.log_link[data-v-223abea1]{\r\n        text-decoration: none;\r\n        margin: 10px;\r\n        background: #545454;\r\n        color: #6baa75;\n}\n.bar1[data-v-223abea1],\r\n    \r\n    .bar3[data-v-223abea1] {\r\n        width: 30px;\r\n        height: 5px;\r\n        margin: 0.5rem;\r\n        background: #6baa75;\r\n        transition: all 2s ease;\n}\n.change .bar1[data-v-223abea1] {\r\n        transform: rotate(-45deg);\r\n        translate: -10px, 10px;\n}\n.change .bar3[data-v-223abea1] {\r\n        transform: rotate(45deg);\r\n        translate: -7px, -8px;\n}\n.navbar__links[data-v-223abea1] {\r\n        list-style-type: none;\r\n        transition: all 2s ease;\r\n        /**/\r\n        height: 0;\r\n        overflow: hidden;\n}\n.navbar__collapse[data-v-223abea1] {\r\n        height: 240px;\n}\n.navbar__single-link[data-v-223abea1] {\r\n        display: block;\r\n        background: #69747c;\r\n        padding: 1rem;\r\n        font-size: 1.5rem;\r\n        text-decoration: none;\r\n        text-transform: capitalize;\r\n        color: #6baa75;\r\n        transition: all 1s ease;\r\n        cursor: pointer;\n}\n.navbar__single-link[data-v-223abea1]:hover {\r\n        padding-left: 1.5rem;\r\n        background: #545454;\n}\nheader[data-v-223abea1] {\r\n        min-height: calc(100vh - 91.8px);\r\n        background: url();\n}\n}\n@media screen and (max-width: 992px) {\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* .sidebar{\r\n    margin: 0px 19px 0px 17px;\r\n} */\nul[data-v-223abea1]{\r\n    list-style-type: none;\r\n    overflow: inherit;\r\n    justify-content: space-between;\n}\n.navbar__links[data-v-223abea1]{\r\n    display: flex;\n}\n.basic[data-v-223abea1]{\r\n    display: flex;\r\n    font-weight: 900;\n}\n.auth[data-v-223abea1]{\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    font-weight: 900;\r\n    /* /* float: right; */\n}\nli a[data-v-223abea1]{\r\n    text-decoration: none;\r\n    display: block;\r\n    color:  #6baa75;\r\n    text-align: center;\r\n    padding: 14px 16px;\n}\nli a[data-v-223abea1]:hover{\r\n    background-color: #111;\n}\n.navbar__header[data-v-223abea1]{\r\n    display: none;\n}\n@media screen and (max-width: 600px) {\n.basic[data-v-223abea1] {\r\n    display: flex;\r\n    flex-direction: column;\n}\n.sidebar[data-v-223abea1]{\r\n      margin: 0px;\n}\n.navbar__header[data-v-223abea1] {\r\n        display: flex;\r\n        justify-content: space-between;\r\n        padding: 0.5rem 1rem;\r\n        background: #545454;\r\n        border-bottom: 0.3rem solid #6baa75;\n}\n.navbar__btn[data-v-223abea1] {\r\n        align-self: center;\r\n        border: 5px solid #6baa75;\r\n        cursor: pointer;\n}\n.navbar__btns[data-v-223abea1] {\r\n        align-self: center;\r\n        font-weight: 900;\r\n        background: #545454;\n}\n.log_link[data-v-223abea1]{\r\n        text-decoration: none;\r\n        margin: 10px;\r\n        background: #545454;\r\n        color: #6baa75;\n}\n.bar1[data-v-223abea1],\r\n    \r\n    .bar3[data-v-223abea1] {\r\n        width: 30px;\r\n        height: 5px;\r\n        margin: 0.5rem;\r\n        background: #6baa75;\r\n        transition: all 2s ease;\n}\n.change .bar1[data-v-223abea1] {\r\n        transform: rotate(-45deg);\r\n        translate: -10px, 10px;\n}\n.change .bar3[data-v-223abea1] {\r\n        transform: rotate(45deg);\r\n        translate: -7px, -8px;\n}\n.navbar__links[data-v-223abea1] {\r\n        list-style-type: none;\r\n        transition: all 2s ease;\r\n        /**/\r\n        height: 0;\r\n        overflow: hidden;\n}\n.navbar__collapse[data-v-223abea1] {\r\n        height: 240px;\n}\n.navbar__single-link[data-v-223abea1] {\r\n        display: block;\r\n        background: #69747c;\r\n        padding: 1rem;\r\n        font-size: 1.5rem;\r\n        text-decoration: none;\r\n        text-transform: capitalize;\r\n        color: #6baa75;\r\n        transition: all 1s ease;\r\n        cursor: pointer;\n}\n.navbar__single-link[data-v-223abea1]:hover {\r\n        padding-left: 1.5rem;\r\n        background: #545454;\n}\nheader[data-v-223abea1] {\r\n        min-height: calc(100vh - 91.8px);\r\n        background: url();\n}\n}\n@media screen and (max-width: 992px) {\n}\r\n", ""]);
 
 // exports
 
@@ -38393,57 +38423,116 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("form", { staticClass: "form_submit" }, [
-        _c("div", { staticClass: "name" }, [
-          _c("label", { staticClass: "name_label", attrs: { for: "name" } }, [
-            _vm._v("Name/Phone Number:")
-          ]),
-          _vm._v(" "),
-          _c("input", { staticClass: "name_input", attrs: { type: "text" } })
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { ref: "snackbar", attrs: { id: "snackbar" } }),
+    _vm._v(" "),
+    _c("form", { staticClass: "form_submit" }, [
+      _c("div", { staticClass: "name" }, [
+        _c("label", { staticClass: "name_label", attrs: { for: "name" } }, [
+          _vm._v("Name/Phone Number:")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "phone" }, [
-          _c("label", { staticClass: "phone_label", attrs: { for: "phone" } }, [
-            _vm._v("Receipent(s) Number:")
-          ]),
-          _vm._v(" "),
-          _c("textarea", {
-            attrs: { name: "", id: "", cols: "45", rows: "13" }
-          })
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.name,
+              expression: "name"
+            }
+          ],
+          staticClass: "name_input",
+          attrs: { type: "text" },
+          domProps: { value: _vm.name },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.name = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "phone" }, [
+        _c("label", { staticClass: "phone_label", attrs: { for: "phone" } }, [
+          _vm._v("Receipent(s) Number:")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "message" }, [
-          _c(
-            "label",
-            { staticClass: "message_label", attrs: { for: "message" } },
-            [_vm._v("Message: ")]
-          ),
-          _vm._v(" "),
-          _c("textarea", {
-            staticClass: "message_text",
-            attrs: { name: "", id: "", cols: "30", rows: "10" }
-          })
-        ]),
+        _c("textarea", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.phone,
+              expression: "phone"
+            }
+          ],
+          attrs: { name: "", id: "", cols: "45", rows: "13" },
+          domProps: { value: _vm.phone },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.phone = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "message" }, [
+        _c(
+          "label",
+          { staticClass: "message_label", attrs: { for: "message" } },
+          [_vm._v("Message: ")]
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "btn_container" }, [
-          _c("button", { staticClass: "send" }, [_vm._v("SEND NOW")]),
-          _vm._v(" "),
-          _c("button", { staticClass: "schedule" }, [
-            _vm._v("SCHEDULE MESSAGE")
-          ])
-        ])
+        _c("textarea", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.message,
+              expression: "message"
+            }
+          ],
+          staticClass: "message_text",
+          attrs: { name: "", id: "", cols: "30", rows: "10" },
+          domProps: { value: _vm.message },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.message = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "btn_container" }, [
+        _c(
+          "button",
+          {
+            staticClass: "send",
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.snackBar($event)
+              }
+            }
+          },
+          [_vm._v("SEND NOW")]
+        ),
+        _vm._v(" "),
+        _c("button", { staticClass: "schedule" }, [_vm._v("SCHEDULE MESSAGE")])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -38529,7 +38618,23 @@ var staticRenderFns = [
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "auth" })
+          _c("div", { staticClass: "auth" }, [
+            _c("li", [
+              _c(
+                "a",
+                { staticClass: "navbar__single-link", attrs: { href: "" } },
+                [_vm._v("LOGIN")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c(
+                "a",
+                { staticClass: "navbar__single-link", attrs: { href: "" } },
+                [_vm._v("REGISTER")]
+              )
+            ])
+          ])
         ])
       ])
     ])
