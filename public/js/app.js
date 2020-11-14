@@ -1973,13 +1973,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Main',
   data: function data() {
     return {
       name: '',
       phone: '',
-      message: ''
+      message: '',
+      date: new Date()
     };
   },
   methods: {
@@ -1999,6 +2013,19 @@ __webpack_require__.r(__webpack_exports__);
           x.className = x.className.replace('show', '');
         }, 3000);
       }
+    },
+    open: function open() {
+      var modal = this.$refs.myModal;
+      modal.style.display = "block";
+    },
+    close: function close() {
+      var modal = this.$refs.myModal; // var span = this.$refs.close
+
+      modal.style.display = "none"; // window.onclick = function (event) {
+      //     if(event.target == modal){
+      //         modal.style.display = "none"
+      //     }
+      // }
     }
   }
 });
@@ -6519,7 +6546,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.container[data-v-b9c20fb8]{\r\n    height: 85vh;\n}\n.name[data-v-b9c20fb8]{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\n}\n.phone[data-v-b9c20fb8]{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\n}\n.message[data-v-b9c20fb8]{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\n}\n.btn_container[data-v-b9c20fb8]{\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 10px;\n}\ninput[data-v-b9c20fb8]{\r\n    height: 20px;\r\n    /* width: 50%; */\r\n    padding: 5px;\r\n    background-color: #ECEBE4;\r\n    border: none;\r\n    border-radius: 16px 0px 16px 0px;\r\n    font-size: 15px;\r\n    outline: none;\r\n    transition: 0.4s;\n}\ntextarea[data-v-b9c20fb8]{\r\n    padding: 5px;\r\n    background-color: #ECEBE4;\r\n    border: none;\r\n    outline: none;\r\n    border-radius: 16px 0px 16px 0px;\r\n    transition: 0.4s;\n}\nbutton[data-v-b9c20fb8]{\r\n    /* border: none; */\r\n    border-radius: 5px;\r\n    padding: 5px 20px;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n    /* outline: none; */\n}\nbutton[data-v-b9c20fb8]:hover{\r\n    background-color: aqua;\n}\ninput[data-v-b9c20fb8]:focus{\r\n    border-radius: 0px 16px 0px 16px;\n}\ntextarea[data-v-b9c20fb8]:focus{\r\n    border-radius: 0px 16px 0px 16px;\n}\n#snackbar[data-v-b9c20fb8] {\r\n  visibility: hidden;\r\n  min-width: 250px;\r\n  margin-left: -125px;\r\n  background-color: #333;\r\n  color: #fff;\r\n  text-align: center;\r\n  border-radius: 2px;\r\n  padding: 16px;\r\n  position: fixed;\r\n  z-index: 1;\r\n  left: 50%;\r\n  bottom: 30px;\n}\n#snackbar.show[data-v-b9c20fb8] {\r\n  visibility: visible;\r\n  -webkit-animation: fadein-data-v-b9c20fb8 0.5s,fadeout-data-v-b9c20fb8 0.5s 2.5s;\r\n  animation: fadein-data-v-b9c20fb8 0.5s,fadeout-data-v-b9c20fb8 0.5s 2.5s;\n}\n@-webkit-keyframes fadein-data-v-b9c20fb8 {\nfrom {bottom: 0; opacity: 0;}\nto {bottom: 30px; opacity: 1;}\n}\n@keyframes fadein-data-v-b9c20fb8 {\nfrom {bottom: 0; opacity: 0;}\nto {bottom: 30px; opacity: 1;}\n}\n@-webkit-keyframes fadeout-data-v-b9c20fb8 {\nfrom {bottom: 30px; opacity: 1;}\nto {bottom: 0; opacity: 0;}\n}\n@keyframes fadeout-data-v-b9c20fb8 {\nfrom {bottom: 30px; opacity: 1;}\nto {bottom: 0; opacity: 0;}\n}\r\n", ""]);
+exports.push([module.i, "\n.container[data-v-b9c20fb8]{\r\n    height: 85vh;\n}\n.name[data-v-b9c20fb8]{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\n}\n.phone[data-v-b9c20fb8]{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\n}\n.message[data-v-b9c20fb8]{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\n}\n.btn_container[data-v-b9c20fb8]{\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 10px;\n}\ninput[data-v-b9c20fb8]{\r\n    height: 20px;\r\n    /* width: 50%; */\r\n    padding: 5px;\r\n    background-color: #ECEBE4;\r\n    border: none;\r\n    border-radius: 16px 0px 16px 0px;\r\n    font-size: 15px;\r\n    outline: none;\r\n    transition: 0.4s;\n}\ntextarea[data-v-b9c20fb8]{\r\n    padding: 5px;\r\n    background-color: #ECEBE4;\r\n    border: none;\r\n    outline: none;\r\n    border-radius: 16px 0px 16px 0px;\r\n    transition: 0.4s;\n}\nbutton[data-v-b9c20fb8]{\r\n    /* border: none; */\r\n    border-radius: 5px;\r\n    padding: 5px 20px;\r\n    font-weight: bold;\r\n    cursor: pointer;\r\n    /* outline: none; */\n}\nbutton[data-v-b9c20fb8]:hover{\r\n    background-color: aqua;\n}\ninput[data-v-b9c20fb8]:focus{\r\n    border-radius: 0px 16px 0px 16px;\n}\ntextarea[data-v-b9c20fb8]:focus{\r\n    border-radius: 0px 16px 0px 16px;\n}\n#snackbar[data-v-b9c20fb8] {\r\n  visibility: hidden;\r\n  min-width: 250px;\r\n  margin-left: -125px;\r\n  background-color: #333;\r\n  color: #fff;\r\n  text-align: center;\r\n  border-radius: 2px;\r\n  padding: 16px;\r\n  position: fixed;\r\n  z-index: 1;\r\n  left: 50%;\r\n  bottom: 30px;\n}\n#snackbar.show[data-v-b9c20fb8] {\r\n  visibility: visible;\r\n  -webkit-animation: fadein-data-v-b9c20fb8 0.5s,fadeout-data-v-b9c20fb8 0.5s 2.5s;\r\n  animation: fadein-data-v-b9c20fb8 0.5s,fadeout-data-v-b9c20fb8 0.5s 2.5s;\n}\n@-webkit-keyframes fadein-data-v-b9c20fb8 {\nfrom {bottom: 0; opacity: 0;}\nto {bottom: 30px; opacity: 1;}\n}\n@keyframes fadein-data-v-b9c20fb8 {\nfrom {bottom: 0; opacity: 0;}\nto {bottom: 30px; opacity: 1;}\n}\n@-webkit-keyframes fadeout-data-v-b9c20fb8 {\nfrom {bottom: 30px; opacity: 1;}\nto {bottom: 0; opacity: 0;}\n}\n@keyframes fadeout-data-v-b9c20fb8 {\nfrom {bottom: 30px; opacity: 1;}\nto {bottom: 0; opacity: 0;}\n}\n.modal[data-v-b9c20fb8] {\r\n  display: none;\r\n  position: fixed;\r\n  z-index: 1;\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  overflow: auto;\r\n  background-color: rgb(0,0,0);\r\n  background-color: rgba(0,0,0,0.4);\n}\n.modal-content[data-v-b9c20fb8] {\r\n  background-color: #333;\r\n  margin: 15% auto;\r\n  padding: 20px;\r\n  border: 1px solid #888;\r\n  width: 50%;\r\n  color:  #fff;\n}\n.close[data-v-b9c20fb8] {\r\n  color: #aaa;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\n}\n.close[data-v-b9c20fb8]:hover,\r\n.close[data-v-b9c20fb8]:focus {\r\n  color: black;\r\n  text-decoration: none;\r\n  cursor: pointer;\n}\n.dates input[data-v-b9c20fb8]{\r\n    border-radius: 0;\r\n    margin: 10px;\n}\n.dates[data-v-b9c20fb8]{\r\n    display: flex;\r\n    flex-direction: column;\n}\n.dates button[data-v-b9c20fb8]{\r\n    width: 50%;\r\n    height: 40px;\r\n    /* border-radius: 0;\r\n    padding: 0; */\n}\n.dates-btn[data-v-b9c20fb8]{\r\n    display: flex;\r\n    justify-content: center;\n}\r\n", ""]);
 
 // exports
 
@@ -38424,6 +38451,32 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _c(
+      "div",
+      { ref: "myModal", staticClass: "modal", attrs: { id: "myModal" } },
+      [
+        _c("div", { staticClass: "modal-content" }, [
+          _c(
+            "span",
+            { ref: "close", staticClass: "close", on: { click: _vm.close } },
+            [_vm._v("×")]
+          ),
+          _vm._v(" "),
+          _c("p", [_vm._v("Current Time is: " + _vm._s(_vm.date))]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dates" }, [
+            _c("input", { staticClass: "date", attrs: { type: "date" } }),
+            _vm._v(" "),
+            _c("input", { staticClass: "time", attrs: { type: "time" } }),
+            _vm._v(" "),
+            _c("div", { staticClass: "dates-btn" }, [
+              _c("button", { on: { click: _vm.close } }, [_vm._v("SET TIME")])
+            ])
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
     _c("div", { ref: "snackbar", attrs: { id: "snackbar" } }),
     _vm._v(" "),
     _c("form", { staticClass: "form_submit" }, [
@@ -38527,7 +38580,21 @@ var render = function() {
           [_vm._v("SEND NOW")]
         ),
         _vm._v(" "),
-        _c("button", { staticClass: "schedule" }, [_vm._v("SCHEDULE MESSAGE")])
+        _c(
+          "button",
+          {
+            ref: "myBtn",
+            staticClass: "schedule",
+            attrs: { id: "myBtn" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.open($event)
+              }
+            }
+          },
+          [_vm._v("SCHEDULE MESSAGE")]
+        )
       ])
     ])
   ])

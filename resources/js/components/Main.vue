@@ -1,5 +1,18 @@
 <template>
     <div class="container">
+        <div id="myModal" class="modal" ref="myModal">
+            <div class="modal-content">
+                <span class="close" ref="close" @click="close">&times;</span>
+                <p>Current Time is: {{date}}</p>
+                <div class="dates">
+                    <input type="date" class="date">
+                    <input type="time" class="time">
+                    <div class="dates-btn">
+                        <button @click="close">SET TIME</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="snackbar" ref="snackbar"> </div>
         <!-- <div id="snackbar" ref="snackbars" :class="{'show': isActive }">Message Sent</div> -->
         <form class="form_submit">
@@ -18,7 +31,7 @@
             </div>
             <div class="btn_container">
                 <button class="send" @click.prevent="snackBar">SEND NOW</button>
-                <button class="schedule">SCHEDULE MESSAGE</button>
+                <button class="schedule" id="myBtn" ref="myBtn" @click.prevent="open">SCHEDULE MESSAGE</button>
             </div>
         </form>
     </div>
@@ -30,7 +43,8 @@ export default {
         return {
            name: '',
            phone: '',
-           message: '' 
+           message: '',
+           date:  new Date
         }
     },
     methods:{
@@ -52,6 +66,22 @@ export default {
                         x.className = x.className.replace('show','')
                     }, 3000);
             }
+        },
+
+        open(){
+            var modal = this.$refs.myModal
+            modal.style.display = "block"
+        },
+
+        close(){
+            var modal = this.$refs.myModal
+            // var span = this.$refs.close
+            modal.style.display = "none"
+            // window.onclick = function (event) {
+            //     if(event.target == modal){
+            //         modal.style.display = "none"
+            //     }
+            // }
         }
     }
 }
@@ -168,5 +198,63 @@ textarea:focus{
 @keyframes fadeout {
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #333;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  color:  #fff;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dates input{
+    border-radius: 0;
+    margin: 10px;
+}
+
+.dates{
+    display: flex;
+    flex-direction: column;
+}
+
+.dates button{
+    width: 50%;
+    height: 40px;
+    /* border-radius: 0;
+    padding: 0; */   
+}
+
+.dates-btn{
+    display: flex;
+    justify-content: center;
 }
 </style>
