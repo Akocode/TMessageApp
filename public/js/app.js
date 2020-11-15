@@ -2082,8 +2082,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "SideBar",
+  methods: {
+    navbarBtn: function navbarBtn() {
+      var value = this.$refs.navbarLinks.classList.contains('navbar__collapse');
+
+      if (value) {
+        this.$refs.navbarLinks.classList.remove('navbar__collapse');
+        this.$refs.navbarBtn.classList.remove('change');
+      } else {
+        this.$refs.navbarLinks.classList.add('navbar__collapse');
+        this.$refs.navbarBtn.classList.add('change');
+      }
+    }
+  }
+});
 
 /***/ }),
 
@@ -6565,7 +6579,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* .sidebar{\r\n    margin: 0px 19px 0px 17px;\r\n} */\nul[data-v-223abea1]{\r\n    list-style-type: none;\r\n    overflow: inherit;\r\n    justify-content: space-between;\n}\n.navbar__links[data-v-223abea1]{\r\n    display: flex;\n}\n.basic[data-v-223abea1]{\r\n    display: flex;\r\n    font-weight: 900;\n}\n.auth[data-v-223abea1]{\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    font-weight: 900;\r\n    /* /* float: right; */\n}\nli a[data-v-223abea1]{\r\n    text-decoration: none;\r\n    display: block;\r\n    color:  #6baa75;\r\n    text-align: center;\r\n    padding: 14px 16px;\n}\nli a[data-v-223abea1]:hover{\r\n    background-color: #111;\n}\n.navbar__header[data-v-223abea1]{\r\n    display: none;\n}\n@media screen and (max-width: 600px) {\n.basic[data-v-223abea1] {\r\n    display: flex;\r\n    flex-direction: column;\n}\n.sidebar[data-v-223abea1]{\r\n      margin: 0px;\n}\n.navbar__header[data-v-223abea1] {\r\n        display: flex;\r\n        justify-content: space-between;\r\n        padding: 0.5rem 1rem;\r\n        background: #545454;\r\n        border-bottom: 0.3rem solid #6baa75;\n}\n.navbar__btn[data-v-223abea1] {\r\n        align-self: center;\r\n        border: 5px solid #6baa75;\r\n        cursor: pointer;\n}\n.navbar__btns[data-v-223abea1] {\r\n        align-self: center;\r\n        font-weight: 900;\r\n        background: #545454;\n}\n.log_link[data-v-223abea1]{\r\n        text-decoration: none;\r\n        margin: 10px;\r\n        background: #545454;\r\n        color: #6baa75;\n}\n.bar1[data-v-223abea1],\r\n    \r\n    .bar3[data-v-223abea1] {\r\n        width: 30px;\r\n        height: 5px;\r\n        margin: 0.5rem;\r\n        background: #6baa75;\r\n        transition: all 2s ease;\n}\n.change .bar1[data-v-223abea1] {\r\n        transform: rotate(-45deg);\r\n        translate: -10px, 10px;\n}\n.change .bar3[data-v-223abea1] {\r\n        transform: rotate(45deg);\r\n        translate: -7px, -8px;\n}\n.navbar__links[data-v-223abea1] {\r\n        list-style-type: none;\r\n        transition: all 2s ease;\r\n        /**/\r\n        height: 0;\r\n        overflow: hidden;\n}\n.navbar__collapse[data-v-223abea1] {\r\n        height: 240px;\n}\n.navbar__single-link[data-v-223abea1] {\r\n        display: block;\r\n        background: #69747c;\r\n        padding: 1rem;\r\n        font-size: 1.5rem;\r\n        text-decoration: none;\r\n        text-transform: capitalize;\r\n        color: #6baa75;\r\n        transition: all 1s ease;\r\n        cursor: pointer;\n}\n.navbar__single-link[data-v-223abea1]:hover {\r\n        padding-left: 1.5rem;\r\n        background: #545454;\n}\nheader[data-v-223abea1] {\r\n        min-height: calc(100vh - 91.8px);\r\n        background: url();\n}\n}\n@media screen and (max-width: 992px) {\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* .sidebar{\r\n    margin: 0px 19px 0px 17px;\r\n} */\nul[data-v-223abea1]{\r\n    list-style-type: none;\r\n    overflow: inherit;\r\n    justify-content: space-between;\n}\n.navbar__links[data-v-223abea1]{\r\n    display: flex;\n}\n.basic[data-v-223abea1]{\r\n    display: flex;\r\n    font-weight: 900;\n}\n.auth[data-v-223abea1]{\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    font-weight: 900;\r\n    /* /* float: right; */\n}\nli a[data-v-223abea1]{\r\n    text-decoration: none;\r\n    display: block;\r\n    color:  #6baa75;\r\n    text-align: center;\r\n    padding: 14px 16px;\n}\nli a[data-v-223abea1]:hover{\r\n    background-color: #111;\n}\n.navbar__header[data-v-223abea1]{\r\n    display: none;\n}\n@media screen and (max-width: 600px) {\n.basic[data-v-223abea1] {\r\n    display: flex;\r\n    flex-direction: column;\n}\n.sidebar[data-v-223abea1]{\r\n      margin: 0px;\n}\n.auth[data-v-223abea1]{\r\n      display: none;\n}\n.navbar__header[data-v-223abea1] {\r\n        display: flex;\r\n        justify-content: space-between;\r\n        padding: 0.5rem 1rem;\r\n        background: #545454;\r\n        border-bottom: 0.3rem solid #6baa75;\n}\n.navbar__btn[data-v-223abea1] {\r\n        align-self: center;\r\n        border: 5px solid #6baa75;\r\n        cursor: pointer;\n}\n.navbar__btns[data-v-223abea1] {\r\n        align-self: center;\r\n        font-weight: 900;\r\n        background: #545454;\n}\n.log_link[data-v-223abea1]{\r\n        text-decoration: none;\r\n        margin: 10px;\r\n        background: #545454;\r\n        color: #6baa75;\n}\n.bar1[data-v-223abea1],\r\n    .bar2[data-v-223abea1],\r\n    .bar3[data-v-223abea1] {\r\n        width: 30px;\r\n        height: 5px;\r\n        margin: 0.5rem;\r\n        background: #6baa75;\r\n        transition: all 2s ease;\n}\r\n\r\n    /* .change .bar1 {\r\n        transform: rotate(-45deg);\r\n        translate: -10px, 10px;\r\n    } */\n.change .bar3[data-v-223abea1] {\r\n        transform: rotate(90deg);\r\n        translate: -7px, -8px;\n}\n.navbar__links[data-v-223abea1] {\r\n        list-style-type: none;\r\n        transition: all 2s ease;\r\n        /**/\r\n        height: 0;\r\n        overflow: hidden;\n}\n.navbar__collapse[data-v-223abea1] {\r\n        height: 250px;\n}\n.navbar__single-link[data-v-223abea1] {\r\n        display: block;\r\n        background: #69747c;\r\n        padding: 1rem;\r\n        font-size: 1.5rem;\r\n        text-decoration: none;\r\n        text-transform: capitalize;\r\n        color: #6baa75;\r\n        transition: all 1s ease;\r\n        cursor: pointer;\n}\n.navbar__single-link[data-v-223abea1]:hover {\r\n        padding-left: 1.5rem;\r\n        background: #545454;\n}\nheader[data-v-223abea1] {\r\n        min-height: calc(100vh - 91.8px);\r\n        background: url();\n}\n}\n@media screen and (max-width: 992px) {\n}\r\n", ""]);
 
 // exports
 
@@ -38621,87 +38635,93 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "sidebar" }, [
+    _c("nav", [
+      _c("div", { staticClass: "navbar__header" }, [
+        _c(
+          "div",
+          {
+            ref: "navbarBtn",
+            staticClass: "navbar__btn",
+            on: { click: _vm.navbarBtn }
+          },
+          [
+            _c("div", { staticClass: "bar bar1" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "bar bar3" })
+          ]
+        ),
+        _vm._v(" "),
+        _vm._m(0)
+      ]),
+      _vm._v(" "),
+      _c("ul", { ref: "navbarLinks", staticClass: "navbar__links" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2)
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sidebar" }, [
-      _c("nav", [
-        _c("div", { staticClass: "navbar__header" }, [
-          _c("div", { staticClass: "navbar__btn" }, [
-            _c("div", { staticClass: "bar bar1" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "bar bar2" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "bar bar3" })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "navbar__btns" }, [
-            _c("a", { staticClass: "log_link", attrs: { href: "" } }, [
-              _vm._v("LOGIN")
-            ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "log_link", attrs: { href: "" } }, [
-              _vm._v("REGISTER")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("ul", { staticClass: "navbar__links" }, [
-          _c("div", { staticClass: "basic" }, [
-            _c("li", [
-              _c(
-                "a",
-                { staticClass: "navbar__single-link", attrs: { href: "" } },
-                [_vm._v("SENT")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c(
-                "a",
-                { staticClass: "navbar__single-link", attrs: { href: "" } },
-                [_vm._v("PENDING")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c(
-                "a",
-                { staticClass: "navbar__single-link", attrs: { href: "" } },
-                [_vm._v("FAILED")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c(
-                "a",
-                { staticClass: "navbar__single-link", attrs: { href: "" } },
-                [_vm._v("CONTACT US")]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "auth" }, [
-            _c("li", [
-              _c(
-                "a",
-                { staticClass: "navbar__single-link", attrs: { href: "" } },
-                [_vm._v("LOGIN")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c(
-                "a",
-                { staticClass: "navbar__single-link", attrs: { href: "" } },
-                [_vm._v("REGISTER")]
-              )
-            ])
-          ])
+    return _c("div", { staticClass: "navbar__btns" }, [
+      _c("a", { staticClass: "log_link", attrs: { href: "" } }, [
+        _vm._v("LOGIN")
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "log_link", attrs: { href: "" } }, [
+        _vm._v("REGISTER")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "basic" }, [
+      _c("li", [
+        _c("a", { staticClass: "navbar__single-link", attrs: { href: "" } }, [
+          _vm._v("SENT")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { staticClass: "navbar__single-link", attrs: { href: "" } }, [
+          _vm._v("PENDING")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { staticClass: "navbar__single-link", attrs: { href: "" } }, [
+          _vm._v("FAILED")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { staticClass: "navbar__single-link", attrs: { href: "" } }, [
+          _vm._v("CONTACT US")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "auth" }, [
+      _c("li", [
+        _c("a", { staticClass: "navbar__single-link", attrs: { href: "" } }, [
+          _vm._v("LOGIN")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { staticClass: "navbar__single-link", attrs: { href: "" } }, [
+          _vm._v("REGISTER")
         ])
       ])
     ])

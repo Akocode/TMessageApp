@@ -2,9 +2,8 @@
     <div class="sidebar">
         <nav>
             <div class="navbar__header">
-                <div class="navbar__btn">
+                <div class="navbar__btn" ref="navbarBtn" @click="navbarBtn">
                     <div class="bar bar1"></div>
-                    <div class="bar bar2"></div>
                     <div class="bar bar3"></div> 
                 </div>
                 <div class="navbar__btns">
@@ -12,7 +11,7 @@
                     <a href="" class="log_link">REGISTER</a>
                 </div>
             </div>
-            <ul class="navbar__links">
+            <ul class="navbar__links" ref="navbarLinks">
                 <div class="basic">
                     <li>
                         <a href="" class="navbar__single-link">SENT</a>
@@ -42,6 +41,19 @@
 
 <script>
 export default {
+name: "SideBar",
+    methods: {
+        navbarBtn(){
+            let value = this.$refs.navbarLinks.classList.contains('navbar__collapse')
+            if(value){
+                this.$refs.navbarLinks.classList.remove('navbar__collapse')
+                this.$refs.navbarBtn.classList.remove('change')
+            }else{
+                this.$refs.navbarLinks.classList.add('navbar__collapse')
+                this.$refs.navbarBtn.classList.add('change')
+            }
+        }
+    },
 }
 </script>
 
@@ -97,6 +109,10 @@ li a:hover{
       margin: 0px;
   }
 
+  .auth{
+      display: none;
+  }
+
     .navbar__header {
         display: flex;
         justify-content: space-between;
@@ -125,7 +141,7 @@ li a:hover{
     }
 
     .bar1,
-    /* .bar2, */
+    .bar2,
     .bar3 {
         width: 30px;
         height: 5px;
@@ -134,14 +150,14 @@ li a:hover{
         transition: all 2s ease;
     }
 
-    .change .bar1 {
+    /* .change .bar1 {
         transform: rotate(-45deg);
         translate: -10px, 10px;
-    }
+    } */
 
 
     .change .bar3 {
-        transform: rotate(45deg);
+        transform: rotate(90deg);
         translate: -7px, -8px;
     }
 
@@ -154,7 +170,7 @@ li a:hover{
     }
 
     .navbar__collapse {
-        height: 240px;
+        height: 250px;
     }
 
     .navbar__single-link {
