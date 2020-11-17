@@ -18,7 +18,7 @@
         <form class="form_submit">
             <div class="name">
                 <label for="name" class="name_label">Name/Phone Number:</label>
-                <input type="text" class="name_input" v-model="name">
+                <input class="name_input" v-model="name">
             </div>
             <div class="phone">
                 <label for="phone" class="phone_label">Receipent(s) Number:</label>
@@ -42,13 +42,13 @@ export default {
     data() {
         return {
            name: '',
-           phone: '',
+           phone: [],
            message: '',
            date:  new Date
         }
     },
     methods:{
-        snackBar(){
+        async snackBar(){
             if(this.name == '' || this.phone == '' || this.message == ''){
                 var y = this.$refs.snackbar
                 y.innerHTML = 'Message Not Sent. Please Fill in All Fields'
@@ -58,13 +58,41 @@ export default {
                         y.className = y.className.replace('show','')
                     }, 3000);
             }else{
-                var x = this.$refs.snackbar
-                x.innerHTML = 'Message Sent'
-                x.className = 'show'
-                setTimeout(
-                    function() {
-                        x.className = x.className.replace('show','')
-                    }, 3000);
+                const send = axios.post('/api/userdirectories/',{
+                    name: this.name,
+                    phone: this.phone,
+                    message: this.message
+
+                })
+                .then(function (response){
+                    // var x = this.$refs.snackbar
+                    // x.innerHTML = 'Message not Sent'
+                    // x.className = 'show'
+                    // setTimeout(
+                    //     function() {
+                    //         x.className = x.className.replace('show','')
+                    //     }, 3000);
+                })
+                .catch(function(error){
+                    console.log(error);
+                    if(error.response.status === 422){
+                        window.location = '/me'
+                    }else if(error.request){
+
+                    }else{
+
+                    }
+                });
+
+                if(send){
+                    var x = this.$refs.snackbar
+                    x.innerHTML = 'Message Sent'
+                    x.className = 'show'
+                    setTimeout(
+                        function() {
+                            x.className = x.className.replace('show','')
+                        }, 3000);
+                }
             }
         },
 

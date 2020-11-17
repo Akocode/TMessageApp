@@ -195,8 +195,4 @@ li a:hover{
         background: url();
     }
 }
-
-@media screen and (max-width: 992px) {
-  
-}
 </style>
