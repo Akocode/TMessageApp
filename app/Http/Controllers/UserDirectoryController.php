@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\UsersDirectory;
 use Twilio\Rest\Client;
+use Carbon\Carbon;
 
 class UserDirectoryController extends Controller
 {
@@ -39,13 +40,18 @@ class UserDirectoryController extends Controller
         $validateData = $request->validate([
             'name' => 'required',
             'phone' => 'required|unique:users_directory',
+            'timezonestamp' => 'required|date|nullable',
             'message' => 'required|max:160'
         ]);
 
-        $user_directory = new UsersDirectory;
-        $user_directory->name = $request->input('name');
-        $user_directory->phone = $request->input('phone');
-        $user_directory->message = $request->input('message');
+        $user_directory = new UsersDirectory();
+        $user_directory->name = $validateData['name'];
+        $user_directory->phone = $validateData['phone'];
+        $user_directory->timezonestamp = Carbon::parse("{$validateData['date']} {$validateData['time']}");
+        $user_directory->message = $validateData['message'];
+        // $user_directory->name = $request->input('name');
+        // $user_directory->phone = $request->input('phone');
+        // $user_directory->message = $request->input('message');
         $user_directory->save();
 
         return back();

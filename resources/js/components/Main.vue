@@ -44,6 +44,7 @@ export default {
            name: '',
            phone: [],
            message: '',
+        //    timezonestamp: '',
            date:  new Date
         }
     },
@@ -61,7 +62,8 @@ export default {
                 const send = axios.post('/api/userdirectories/',{
                     name: this.name,
                     phone: this.phone,
-                    message: this.message
+                    message: this.message,
+                    // timezonestamp: this.timezonestamp
 
                 })
                 .then(function (response){
@@ -76,7 +78,7 @@ export default {
                 .catch(function(error){
                     console.log(error);
                     if(error.response.status === 422){
-                        window.location = '/me'
+                        // window.location = '/me'
                     }else if(error.request){
 
                     }else{

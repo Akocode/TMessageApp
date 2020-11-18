@@ -17,6 +17,7 @@ class CreateUsersDirectoryTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone');
+            $table->string('timezonestamp')->nullable();
             $table->string('message');
             $table->timestamps();
         });

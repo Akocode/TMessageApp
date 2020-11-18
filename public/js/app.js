@@ -2013,6 +2013,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       name: '',
       phone: [],
       message: '',
+      //    timezonestamp: '',
       date: new Date()
     };
   },
@@ -2037,7 +2038,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   send = axios.post('/api/userdirectories/', {
                     name: _this.name,
                     phone: _this.phone,
-                    message: _this.message
+                    message: _this.message // timezonestamp: this.timezonestamp
+
                   }).then(function (response) {// var x = this.$refs.snackbar
                     // x.innerHTML = 'Message not Sent'
                     // x.className = 'show'
@@ -2048,8 +2050,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   })["catch"](function (error) {
                     console.log(error);
 
-                    if (error.response.status === 422) {
-                      window.location = '/me';
+                    if (error.response.status === 422) {// window.location = '/me'
                     } else if (error.request) {} else {}
                   });
 
