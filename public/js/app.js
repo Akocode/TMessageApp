@@ -2005,7 +2005,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Main',
   data: function data() {
@@ -2013,8 +2012,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       name: '',
       phone: [],
       message: '',
-      //    timezonestamp: '',
-      date: new Date()
+      date: '',
+      time: ''
     };
   },
   methods: {
@@ -2038,15 +2037,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   send = axios.post('/api/userdirectories/', {
                     name: _this.name,
                     phone: _this.phone,
-                    message: _this.message // timezonestamp: this.timezonestamp
-
-                  }).then(function (response) {// var x = this.$refs.snackbar
-                    // x.innerHTML = 'Message not Sent'
-                    // x.className = 'show'
-                    // setTimeout(
-                    //     function() {
-                    //         x.className = x.className.replace('show','')
-                    //     }, 3000);
+                    message: _this.message,
+                    date: _this.date,
+                    time: _this.time
+                  }).then(function (response) {//
                   })["catch"](function (error) {
                     console.log(error);
 
@@ -2061,6 +2055,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     setTimeout(function () {
                       x.className = x.className.replace('show', '');
                     }, 3000);
+                    _this.name = '', _this.phone = '', _this.message = '', _this.date = '', _this.time = '';
                   }
                 }
 
@@ -39293,12 +39288,50 @@ var render = function() {
             [_vm._v("×")]
           ),
           _vm._v(" "),
-          _c("p", [_vm._v("Current Time is: " + _vm._s(_vm.date))]),
-          _vm._v(" "),
           _c("div", { staticClass: "dates" }, [
-            _c("input", { staticClass: "date", attrs: { type: "date" } }),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.date,
+                  expression: "date"
+                }
+              ],
+              staticClass: "date",
+              attrs: { type: "date" },
+              domProps: { value: _vm.date },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.date = $event.target.value
+                }
+              }
+            }),
             _vm._v(" "),
-            _c("input", { staticClass: "time", attrs: { type: "time" } }),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.time,
+                  expression: "time"
+                }
+              ],
+              staticClass: "time",
+              attrs: { type: "time" },
+              domProps: { value: _vm.time },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.time = $event.target.value
+                }
+              }
+            }),
             _vm._v(" "),
             _c("div", { staticClass: "dates-btn" }, [
               _c("button", { on: { click: _vm.close } }, [_vm._v("SET TIME")])
@@ -39352,7 +39385,7 @@ var render = function() {
               expression: "phone"
             }
           ],
-          attrs: { name: "", id: "", cols: "45", rows: "13" },
+          attrs: { name: "", id: "", cols: "45", rows: "10" },
           domProps: { value: _vm.phone },
           on: {
             input: function($event) {

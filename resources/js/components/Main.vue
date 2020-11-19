@@ -3,10 +3,9 @@
         <div id="myModal" class="modal" ref="myModal">
             <div class="modal-content">
                 <span class="close" ref="close" @click="close">&times;</span>
-                <p>Current Time is: {{date}}</p>
                 <div class="dates">
-                    <input type="date" class="date">
-                    <input type="time" class="time">
+                    <input type="date" class="date" v-model="date">
+                    <input type="time" class="time" v-model="time">
                     <div class="dates-btn">
                         <button @click="close">SET TIME</button>
                     </div>
@@ -22,7 +21,7 @@
             </div>
             <div class="phone">
                 <label for="phone" class="phone_label">Receipent(s) Number:</label>
-                <textarea name="" id="" cols="45" rows="13" v-model="phone"></textarea>
+                <textarea name="" id="" cols="45" rows="10" v-model="phone"></textarea>
                 <!-- <input type="tel" class="phone_input" placeholder="seperate multiple numbers with ,"> -->
             </div>
             <div class="message">
@@ -44,8 +43,8 @@ export default {
            name: '',
            phone: [],
            message: '',
-        //    timezonestamp: '',
-           date:  new Date
+           date: '',
+           time: '',
         }
     },
     methods:{
@@ -63,17 +62,12 @@ export default {
                     name: this.name,
                     phone: this.phone,
                     message: this.message,
-                    // timezonestamp: this.timezonestamp
+                    date: this.date,
+                    time: this.time,
 
                 })
                 .then(function (response){
-                    // var x = this.$refs.snackbar
-                    // x.innerHTML = 'Message not Sent'
-                    // x.className = 'show'
-                    // setTimeout(
-                    //     function() {
-                    //         x.className = x.className.replace('show','')
-                    //     }, 3000);
+                    //
                 })
                 .catch(function(error){
                     console.log(error);
@@ -94,6 +88,11 @@ export default {
                         function() {
                             x.className = x.className.replace('show','')
                         }, 3000);
+                    this.name = '',
+                    this.phone = '',
+                    this.message ='',
+                    this.date = '',
+                    this.time = ''
                 }
             }
         },
