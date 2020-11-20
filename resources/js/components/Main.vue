@@ -66,8 +66,9 @@ export default {
                     time: this.time,
 
                 })
-                .then(function (response){
-                    //
+                .then(response => {
+                    // this.phone = response.json()
+                    console.log(response)
                 })
                 .catch(function(error){
                     console.log(error);
@@ -90,7 +91,7 @@ export default {
                         }, 3000);
                     this.name = '',
                     this.phone = '',
-                    this.message ='',
+                    this.message =''
                     this.date = '',
                     this.time = ''
                 }

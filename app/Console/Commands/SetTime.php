@@ -48,6 +48,8 @@ class SetTime extends Command
             $twilio_client = new Client($account_sid, $auth_token);
             $now = Carbon::now('Africa/Lagos')->toDateTimeString();
             $timers = UsersDirectory::where('timezonestamp', '=', $now)->get();
+            // $phone_array = explode( ',' , $timer->phone);
+            // $count = 0;
             foreach ($timers as $timer) {
                 $twilio_client->messages->create($timer->phone,
                     array("from" => $twilio_number, "body" => $timer->message));

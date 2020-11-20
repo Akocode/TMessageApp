@@ -2040,7 +2040,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     message: _this.message,
                     date: _this.date,
                     time: _this.time
-                  }).then(function (response) {//
+                  }).then(function (response) {
+                    // this.phone = response.json()
+                    console.log(response);
                   })["catch"](function (error) {
                     console.log(error);
 
@@ -2055,7 +2057,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     setTimeout(function () {
                       x.className = x.className.replace('show', '');
                     }, 3000);
-                    _this.name = '', _this.phone = '', _this.message = '', _this.date = '', _this.time = '';
+                    _this.name = '', _this.phone = '', _this.message = '';
+                    _this.date = '', _this.time = '';
                   }
                 }
 
