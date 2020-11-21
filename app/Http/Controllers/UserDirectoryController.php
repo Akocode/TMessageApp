@@ -45,9 +45,10 @@ class UserDirectoryController extends Controller
             'message' => 'required|max:160'
         ]);
 
-        $user_directory = new UsersDirectory();
+        $user_directory = new UsersDirectory;
         $user_directory->name = $validateData['name'];
-        $user_directory->phone = $validateData['phone'];
+        // $user_directory->phone = $validateData['phone'];
+        $user_directory->phone = explode(',' , $request->input('phone'));
         $user_directory->message = $validateData['message'];
         $user_directory->timezonestamp = Carbon::parse("{$validateData['date']} {$validateData['time']}");
         $user_directory->save();

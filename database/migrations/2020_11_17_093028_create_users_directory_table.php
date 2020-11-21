@@ -16,7 +16,7 @@ class CreateUsersDirectoryTable extends Migration
         Schema::create('users_directory', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('phone');
+            $table->string('phone')->toArray();
             $table->string('timezonestamp')->nullable();
             $table->string('message');
             $table->timestamps();
