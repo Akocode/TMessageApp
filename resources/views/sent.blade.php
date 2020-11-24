@@ -7,9 +7,7 @@
     <title>Sent</title>
 </head>
 <body>
-    <div id="app">
-        <Sent></Sent>
-    </div>
+    
 </body>
 <script src="{{mix('js/app.js')}}"></script>
 </html>

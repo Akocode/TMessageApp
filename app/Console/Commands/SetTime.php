@@ -46,7 +46,7 @@ class SetTime extends Command
             $auth_token = getenv("TWILIO_AUTH_TOKEN");
             $twilio_number = getenv("TWILIO_NUMBER");
             $twilio_client = new Client($account_sid, $auth_token);
-            $now = Carbon::now('Africa/Lagos')->toDateTimeString();
+            $now = Carbon::now('Africa/Lagos')->addSeconds(10)->toDateTimeString();
             $timers = UsersDirectory::where('timezonestamp', '=', $now)->get();
             foreach ($timers as $timer) {
                 $sums = $timer->phone;
