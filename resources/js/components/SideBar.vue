@@ -14,13 +14,12 @@
             <ul class="navbar__links" ref="navbarLinks">
                 <div class="basic">
                     <li>
-                        <a href="" class="navbar__single-link">SENT</a>
+                        <router-link to="/sent" class="navbar__single-link">SENT</router-link>
                     </li>
                     <li>
-                        <a href="" class="navbar__single-link">PENDING</a>
-                        </li>
+                        <router-link to="/pending" class="navbar__single-link">PENDING</router-link>
                     <li>
-                        <a href="" class="navbar__single-link">FAILED</a>
+                        <router-link to="/failed" class="navbar__single-link">FAILED</router-link>
                     </li>
                     <li>
                         <a href="" class="navbar__single-link">CONTACT US</a>

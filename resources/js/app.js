@@ -5,8 +5,9 @@
  */
 
 require('./bootstrap');
-
 window.Vue = require('vue');
+import VueRouter from 'vue-router';
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -18,8 +19,20 @@ window.Vue = require('vue');
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+Vue.use(VueRouter);
 
-Vue.component('app', require('./components/App.vue').default);
+const routes = [
+    { path: '/', component: require('./components/App.vue').default },
+    { path: '/sent', component: require('./components/Sent.vue').default },
+    { path: '/pending', component: require('./components/Pending.vue').default },
+    { path: '/failed', component: require('./components/Failed.vue').default },
+];
+// Vue.component('app', require('./components/App.vue').default);
+
+const router = new VueRouter({
+    routes: routes,
+    mode: "history"
+});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,4 +42,5 @@ Vue.component('app', require('./components/App.vue').default);
 
 const app = new Vue({
     el: '#app',
+    router
 });
