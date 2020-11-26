@@ -4,7 +4,7 @@
             <SideBar></SideBar>
         </header>
         <main class="main_container">
-            <Main></Main>
+            <router-view></router-view>
         </main>
         <footer class="foot">
             <!-- <h2>Foot</h2> -->
@@ -19,7 +19,7 @@ import SideBar from './SideBar'
     export default {
         components: {
             Main,
-            SideBar
+            SideBar,
         },
         mounted() {
             console.log('Component mounted.')
@@ -51,8 +51,8 @@ import SideBar from './SideBar'
 
 .main_container{
     grid-column: 1/4;
-    display: grid;
-    place-items: center;
+    /* display: grid;
+    place-items: center; */
 }
 
 .foot{

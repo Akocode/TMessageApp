@@ -21,11 +21,42 @@ import VueRouter from 'vue-router';
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.use(VueRouter);
 
-const routes = [
-    { path: '/', component: require('./components/App.vue').default },
-    { path: '/sent', component: require('./components/Sent.vue').default },
-    { path: '/pending', component: require('./components/Pending.vue').default },
-    { path: '/failed', component: require('./components/Failed.vue').default },
+const routes = [{
+        path: '/',
+        component: require('./components/App.vue').default,
+        children: [{
+            path: '/',
+            name: 'Main',
+            component: require('./components/Main.vue').default
+        }]
+    },
+    {
+        path: '/sent',
+        component: require('./components/App.vue').default,
+        children: [{
+            path: '/sent',
+            name: 'Sent',
+            component: require('./components/Sent.vue').default
+        }]
+    },
+    {
+        path: '/pending',
+        component: require('./components/App.vue').default,
+        children: [{
+            path: '/pending',
+            name: 'Pending',
+            component: require('./components/Pending.vue').default
+        }]
+    },
+    {
+        path: '/failed',
+        component: require('./components/App.vue').default,
+        children: [{
+            path: '/failed',
+            name: 'Failed',
+            component: require('./components/Failed.vue').default
+        }]
+    },
 ];
 // Vue.component('app', require('./components/App.vue').default);
 

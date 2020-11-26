@@ -6,13 +6,19 @@
                     <div class="bar bar1"></div>
                     <div class="bar bar3"></div> 
                 </div>
+                <div class="home">
+                    <router-link to="/" class="log_link">HOME</router-link>
+                </div>
                 <div class="navbar__btns">
-                    <a href="" class="log_link">LOGIN</a>
-                    <a href="" class="log_link">REGISTER</a>
+                    <router-link to="/login" class="log_link">LOGIN</router-link>
+                    <router-link to="/register" class="log_link">REGISTER</router-link>
                 </div>
             </div>
             <ul class="navbar__links" ref="navbarLinks">
                 <div class="basic">
+                    <li class="homie">
+                        <router-link to="/" class="navbar__single-link">HOME</router-link>
+                    </li>
                     <li>
                         <router-link to="/sent" class="navbar__single-link">SENT</router-link>
                     </li>
@@ -124,6 +130,16 @@ li a:hover{
         align-self: center;
         border: 5px solid #6baa75;
         cursor: pointer;
+    }
+    
+    .home {
+        align-self: center;
+        font-weight: 900;
+        background: #545454;
+    }
+
+    .homie{
+        display: none;
     }
     
     .navbar__btns {

@@ -120,6 +120,8 @@ export default {
 <style scoped>
 .container{
     height: 85vh;
+    display: grid;
+    place-items: center;
     
 }
 
