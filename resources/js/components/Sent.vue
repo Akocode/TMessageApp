@@ -6,24 +6,21 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Phone Numbers</th>
+                    <th>Phone Number(s)</th>
                     <th>Message</th>
-                    <th>From</th>
-                    <th>To</th>
                     <th>Created At</th>
                     <th>Scheduled Delivery Time</th>
                 </tr>
                 </thead>
                 <tbody>    
-                <tr>
-                    <td>{{id}}</td>
-                    <td>{{Name}}</td>
-                    <td>{{Phone_numbers}}</td>
-                    <td>{{Message}}</td>
-                    <td>{{From}}</td>
-                    <td>{{To}}</td>
-                    <td>{{Created_at}}</td>
-                    <td>{{Schedule}}</td>
+                <tr v-for="user in users" :key="user.id">
+                    <!-- :tbl="tbl" v-for="{user,index} in users" :key="index" -->
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.message}}</td>
+                    <td>{{user.created_at}}</td>
+                    <td>{{user.timezonestamp}}</td>
                 </tr>
                 </tbody>
             </table>
@@ -36,32 +33,21 @@ export default {
     data() {
         return {
             id: 'none',
-            Name: 'none',
-            Phone_numbers: 'none',
-            Message: 'none',
-            From: 'none',
-            To: 'none',
-            Created_at: 'none',
-            Schedule: 'none'
+            name: 'none',
+            phone: 'none',
+            message: 'none',
+            created_at: 'none',
+            timezonestamp: 'none',
+            users: []
         }
     },
     methods: {
         async read(){
-            const data = axios.get('/api/userdirectories/',{
-                id: this.id,
-                name: this.Name,
-                phone: this.Phone_numbers,
-                message: this.Message,
-                created_at: this.Created_at,
-                timezonestamp: this.Schedule,
-
-            })
+            const data = axios.get('/api/userdirectories/'
+            )
             .then(response => {
-                    // this.phone = response.json()
-                    console.log(response)
-                })
-            // data.forEach(users_directory => this.users_directory.push(new UserDirectory(users_directory)));
-            console.log(data)
+                this.users = response.data
+            })
         }
     },
 
@@ -130,9 +116,7 @@ td, th{
     td:nth-of-type(2):before{content: "Name:";}
     td:nth-of-type(3):before{content: "Phone Number(s):";}
     td:nth-of-type(4):before{content: "Message:";}
-    td:nth-of-type(5):before{content: "From:";}
-    td:nth-of-type(6):before{content: "To:";}
-    td:nth-of-type(7):before{content: "Created At:";}
-    td:nth-of-type(8):before{content: "Scheduled Delivery Time:";}
+    td:nth-of-type(5):before{content: "Created At:";}
+    td:nth-of-type(6):before{content: "Scheduled Delivery Time:";}
 }
 </style>

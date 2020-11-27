@@ -47,8 +47,8 @@ class UserDirectoryController extends Controller
 
         $user_directory = new UsersDirectory;
         $user_directory->name = $validateData['name'];
-        // $user_directory->phone = $validateData['phone'];
-        $user_directory->phone = explode(',' , $request->input('phone'));
+        $user_directory->phone = $validateData['phone'];
+        // $user_directory->phone = explode(',' , $request->input('phone'));
         $user_directory->message = $validateData['message'];
         $user_directory->timezonestamp = Carbon::parse("{$validateData['date']} {$validateData['time']}");
         $user_directory->save();
@@ -62,41 +62,12 @@ class UserDirectoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function see()
+    public function see(Request $request)
     {
-        $users_directory = UsersDirectory::all();
-        return back();
+        $users = UsersDirectory::orderBy('id', 'desc')->get();
+        return response()->json($users);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

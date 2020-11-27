@@ -1960,9 +1960,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -1997,14 +2002,39 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       id: 'none',
-      Name: 'none',
-      Phone_numbers: 'none',
-      Message: 'none',
-      From: 'none',
-      To: 'none',
-      Created_at: 'none',
-      Schedule: 'none'
+      name: 'none',
+      phone: 'none',
+      message: 'none',
+      created_at: 'none',
+      timezonestamp: 'none',
+      users: []
     };
+  },
+  methods: {
+    read: function read() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                data = axios.get('/api/userdirectories/').then(function (response) {
+                  _this.users = response.data;
+                });
+
+              case 1:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  },
+  mounted: function mounted() {
+    this.read();
   }
 });
 
@@ -2118,6 +2148,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     }, 3000);
                     _this.name = '', _this.phone = '', _this.message = '';
                     _this.date = '', _this.time = '';
+                    window.location = '/sent';
                   }
                 }
 
@@ -2156,9 +2187,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -2193,14 +2229,39 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       id: 'none',
-      Name: 'none',
-      Phone_numbers: 'none',
-      Message: 'none',
-      From: 'none',
-      To: 'none',
-      Created_at: 'none',
-      Schedule: 'none'
+      name: 'none',
+      phone: 'none',
+      message: 'none',
+      created_at: 'none',
+      timezonestamp: 'none',
+      users: []
     };
+  },
+  methods: {
+    read: function read() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                data = axios.get('/api/userdirectories/').then(function (response) {
+                  _this.users = response.data;
+                });
+
+              case 1:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  },
+  mounted: function mounted() {
+    this.read();
   }
 });
 
@@ -2253,20 +2314,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       id: 'none',
-      Name: 'none',
-      Phone_numbers: 'none',
-      Message: 'none',
-      From: 'none',
-      To: 'none',
-      Created_at: 'none',
-      Schedule: 'none'
+      name: 'none',
+      phone: 'none',
+      message: 'none',
+      created_at: 'none',
+      timezonestamp: 'none',
+      users: []
     };
   },
   methods: {
@@ -2279,21 +2336,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                data = axios.get('/api/userdirectories/', {
-                  id: _this.id,
-                  name: _this.Name,
-                  phone: _this.Phone_numbers,
-                  message: _this.Message,
-                  created_at: _this.Created_at,
-                  timezonestamp: _this.Schedule
-                }).then(function (response) {
-                  // this.phone = response.json()
-                  console.log(response);
-                }); // data.forEach(users_directory => this.users_directory.push(new UserDirectory(users_directory)));
+                data = axios.get('/api/userdirectories/').then(function (response) {
+                  _this.users = response.data;
+                });
 
-                console.log(data);
-
-              case 2:
+              case 1:
               case "end":
                 return _context.stop();
             }
@@ -6842,7 +6889,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\ntable[data-v-c7a04830]{\r\n    width: 100%;\r\n    border-collapse: collapse;\n}\ntr[data-v-c7a04830]:nth-of-type(odd){\r\n    background: #eee;\n}\nth[data-v-c7a04830]{\r\n    background: #333;\r\n    color:white;\r\n    font-weight: bold;\n}\ntd[data-v-c7a04830], th[data-v-c7a04830]{\r\n    padding: 6px;\r\n    border: 1px solid #ccc;\r\n    text-align: left;\n}\r\n\r\n/* @media only screen and(max-width: 760px),\r\n(min-device-width: 768px) and (max-device-width: 1024px), (max-width: 600px){ */\n@media screen and (max-width: 600px) {\ntable[data-v-c7a04830], thead[data-v-c7a04830], tbody[data-v-c7a04830], th[data-v-c7a04830], td[data-v-c7a04830], tr[data-v-c7a04830]{\r\n        display: block;\n}\nthead tr[data-v-c7a04830]{\r\n        position: absolute;\r\n        top: -9999px;\r\n        left: -9999px;\n}\ntr[data-v-c7a04830]{\r\n        border: 1px solid #ccc;\n}\ntd[data-v-c7a04830]{\r\n        border: none;\r\n        border-bottom: 1px solid black;\r\n        position: relative;\r\n        padding-left: 50%;\n}\ntd[data-v-c7a04830]:before{\r\n        position: absolute;\r\n        top: 6px;\r\n        left: 6px;\r\n        width: 45%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\ntd[data-v-c7a04830]:nth-of-type(1):before{content: \"ID:\";}\ntd[data-v-c7a04830]:nth-of-type(2):before{content: \"Name:\";}\ntd[data-v-c7a04830]:nth-of-type(3):before{content: \"Phone Number(s):\";}\ntd[data-v-c7a04830]:nth-of-type(4):before{content: \"Message:\";}\ntd[data-v-c7a04830]:nth-of-type(5):before{content: \"From:\";}\ntd[data-v-c7a04830]:nth-of-type(6):before{content: \"To:\";}\ntd[data-v-c7a04830]:nth-of-type(7):before{content: \"Created At:\";}\ntd[data-v-c7a04830]:nth-of-type(8):before{content: \"Scheduled Delivery Time:\";}\n}\r\n", ""]);
+exports.push([module.i, "\ntable[data-v-c7a04830]{\r\n    width: 100%;\r\n    border-collapse: collapse;\n}\ntr[data-v-c7a04830]:nth-of-type(odd){\r\n    background: #eee;\n}\nth[data-v-c7a04830]{\r\n    background: #333;\r\n    color:white;\r\n    font-weight: bold;\n}\ntd[data-v-c7a04830], th[data-v-c7a04830]{\r\n    padding: 6px;\r\n    border: 1px solid #ccc;\r\n    text-align: left;\n}\r\n\r\n/* @media only screen and(max-width: 760px),\r\n(min-device-width: 768px) and (max-device-width: 1024px), (max-width: 600px){ */\n@media screen and (max-width: 600px) {\ntable[data-v-c7a04830], thead[data-v-c7a04830], tbody[data-v-c7a04830], th[data-v-c7a04830], td[data-v-c7a04830], tr[data-v-c7a04830]{\r\n        display: block;\n}\nthead tr[data-v-c7a04830]{\r\n        position: absolute;\r\n        top: -9999px;\r\n        left: -9999px;\n}\ntr[data-v-c7a04830]{\r\n        border: 1px solid #ccc;\n}\ntd[data-v-c7a04830]{\r\n        border: none;\r\n        border-bottom: 1px solid black;\r\n        position: relative;\r\n        padding-left: 50%;\n}\ntd[data-v-c7a04830]:before{\r\n        position: absolute;\r\n        top: 6px;\r\n        left: 6px;\r\n        width: 45%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\ntd[data-v-c7a04830]:nth-of-type(1):before{content: \"ID:\";}\ntd[data-v-c7a04830]:nth-of-type(2):before{content: \"Name:\";}\ntd[data-v-c7a04830]:nth-of-type(3):before{content: \"Phone Number(s):\";}\ntd[data-v-c7a04830]:nth-of-type(4):before{content: \"Message:\";}\ntd[data-v-c7a04830]:nth-of-type(5):before{content: \"Created At:\";}\ntd[data-v-c7a04830]:nth-of-type(6):before{content: \"Scheduled Delivery Time:\";}\n}\r\n", ""]);
 
 // exports
 
@@ -6880,7 +6927,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\ntable[data-v-19d90f7c]{\r\n    width: 100%;\r\n    border-collapse: collapse;\n}\ntr[data-v-19d90f7c]:nth-of-type(odd){\r\n    background: #eee;\n}\nth[data-v-19d90f7c]{\r\n    background: #333;\r\n    color:white;\r\n    font-weight: bold;\n}\ntd[data-v-19d90f7c], th[data-v-19d90f7c]{\r\n    padding: 6px;\r\n    border: 1px solid #ccc;\r\n    text-align: left;\n}\r\n\r\n/* @media only screen and(max-width: 760px),\r\n(min-device-width: 768px) and (max-device-width: 1024px), (max-width: 600px){ */\n@media screen and (max-width: 600px) {\ntable[data-v-19d90f7c], thead[data-v-19d90f7c], tbody[data-v-19d90f7c], th[data-v-19d90f7c], td[data-v-19d90f7c], tr[data-v-19d90f7c]{\r\n        display: block;\n}\nthead tr[data-v-19d90f7c]{\r\n        position: absolute;\r\n        top: -9999px;\r\n        left: -9999px;\n}\ntr[data-v-19d90f7c]{\r\n        border: 1px solid #ccc;\n}\ntd[data-v-19d90f7c]{\r\n        border: none;\r\n        border-bottom: 1px solid black;\r\n        position: relative;\r\n        padding-left: 50%;\n}\ntd[data-v-19d90f7c]:before{\r\n        position: absolute;\r\n        top: 6px;\r\n        left: 6px;\r\n        width: 45%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\ntd[data-v-19d90f7c]:nth-of-type(1):before{content: \"ID:\";}\ntd[data-v-19d90f7c]:nth-of-type(2):before{content: \"Name:\";}\ntd[data-v-19d90f7c]:nth-of-type(3):before{content: \"Phone Number(s):\";}\ntd[data-v-19d90f7c]:nth-of-type(4):before{content: \"Message:\";}\ntd[data-v-19d90f7c]:nth-of-type(5):before{content: \"From:\";}\ntd[data-v-19d90f7c]:nth-of-type(6):before{content: \"To:\";}\ntd[data-v-19d90f7c]:nth-of-type(7):before{content: \"Created At:\";}\ntd[data-v-19d90f7c]:nth-of-type(8):before{content: \"Scheduled Delivery Time:\";}\n}\r\n", ""]);
+exports.push([module.i, "\ntable[data-v-19d90f7c]{\r\n    width: 100%;\r\n    border-collapse: collapse;\n}\ntr[data-v-19d90f7c]:nth-of-type(odd){\r\n    background: #eee;\n}\nth[data-v-19d90f7c]{\r\n    background: #333;\r\n    color:white;\r\n    font-weight: bold;\n}\ntd[data-v-19d90f7c], th[data-v-19d90f7c]{\r\n    padding: 6px;\r\n    border: 1px solid #ccc;\r\n    text-align: left;\n}\r\n\r\n/* @media only screen and(max-width: 760px),\r\n(min-device-width: 768px) and (max-device-width: 1024px), (max-width: 600px){ */\n@media screen and (max-width: 600px) {\ntable[data-v-19d90f7c], thead[data-v-19d90f7c], tbody[data-v-19d90f7c], th[data-v-19d90f7c], td[data-v-19d90f7c], tr[data-v-19d90f7c]{\r\n        display: block;\n}\nthead tr[data-v-19d90f7c]{\r\n        position: absolute;\r\n        top: -9999px;\r\n        left: -9999px;\n}\ntr[data-v-19d90f7c]{\r\n        border: 1px solid #ccc;\n}\ntd[data-v-19d90f7c]{\r\n        border: none;\r\n        border-bottom: 1px solid black;\r\n        position: relative;\r\n        padding-left: 50%;\n}\ntd[data-v-19d90f7c]:before{\r\n        position: absolute;\r\n        top: 6px;\r\n        left: 6px;\r\n        width: 45%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\ntd[data-v-19d90f7c]:nth-of-type(1):before{content: \"ID:\";}\ntd[data-v-19d90f7c]:nth-of-type(2):before{content: \"Name:\";}\ntd[data-v-19d90f7c]:nth-of-type(3):before{content: \"Phone Number(s):\";}\ntd[data-v-19d90f7c]:nth-of-type(4):before{content: \"Message:\";}\ntd[data-v-19d90f7c]:nth-of-type(5):before{content: \"Created At:\";}\ntd[data-v-19d90f7c]:nth-of-type(6):before{content: \"Scheduled Delivery Time:\";}\n}\r\n", ""]);
 
 // exports
 
@@ -6899,7 +6946,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\ntable[data-v-22488afa]{\r\n    width: 100%;\r\n    border-collapse: collapse;\n}\ntr[data-v-22488afa]:nth-of-type(odd){\r\n    background: #eee;\n}\nth[data-v-22488afa]{\r\n    background: #333;\r\n    color:white;\r\n    font-weight: bold;\n}\ntd[data-v-22488afa], th[data-v-22488afa]{\r\n    padding: 6px;\r\n    border: 1px solid #ccc;\r\n    text-align: left;\n}\r\n\r\n/* @media only screen and(max-width: 760px),\r\n(min-device-width: 768px) and (max-device-width: 1024px), (max-width: 600px){ */\n@media screen and (max-width: 600px) {\ntable[data-v-22488afa], thead[data-v-22488afa], tbody[data-v-22488afa], th[data-v-22488afa], td[data-v-22488afa], tr[data-v-22488afa]{\r\n        display: block;\n}\nthead tr[data-v-22488afa]{\r\n        position: absolute;\r\n        top: -9999px;\r\n        left: -9999px;\n}\ntr[data-v-22488afa]{\r\n        border: 1px solid #ccc;\n}\ntd[data-v-22488afa]{\r\n        border: none;\r\n        border-bottom: 1px solid black;\r\n        position: relative;\r\n        padding-left: 50%;\n}\ntd[data-v-22488afa]:before{\r\n        position: absolute;\r\n        top: 6px;\r\n        left: 6px;\r\n        width: 45%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\ntd[data-v-22488afa]:nth-of-type(1):before{content: \"ID:\";}\ntd[data-v-22488afa]:nth-of-type(2):before{content: \"Name:\";}\ntd[data-v-22488afa]:nth-of-type(3):before{content: \"Phone Number(s):\";}\ntd[data-v-22488afa]:nth-of-type(4):before{content: \"Message:\";}\ntd[data-v-22488afa]:nth-of-type(5):before{content: \"From:\";}\ntd[data-v-22488afa]:nth-of-type(6):before{content: \"To:\";}\ntd[data-v-22488afa]:nth-of-type(7):before{content: \"Created At:\";}\ntd[data-v-22488afa]:nth-of-type(8):before{content: \"Scheduled Delivery Time:\";}\n}\r\n", ""]);
+exports.push([module.i, "\ntable[data-v-22488afa]{\r\n    width: 100%;\r\n    border-collapse: collapse;\n}\ntr[data-v-22488afa]:nth-of-type(odd){\r\n    background: #eee;\n}\nth[data-v-22488afa]{\r\n    background: #333;\r\n    color:white;\r\n    font-weight: bold;\n}\ntd[data-v-22488afa], th[data-v-22488afa]{\r\n    padding: 6px;\r\n    border: 1px solid #ccc;\r\n    text-align: left;\n}\r\n\r\n/* @media only screen and(max-width: 760px),\r\n(min-device-width: 768px) and (max-device-width: 1024px), (max-width: 600px){ */\n@media screen and (max-width: 600px) {\ntable[data-v-22488afa], thead[data-v-22488afa], tbody[data-v-22488afa], th[data-v-22488afa], td[data-v-22488afa], tr[data-v-22488afa]{\r\n        display: block;\n}\nthead tr[data-v-22488afa]{\r\n        position: absolute;\r\n        top: -9999px;\r\n        left: -9999px;\n}\ntr[data-v-22488afa]{\r\n        border: 1px solid #ccc;\n}\ntd[data-v-22488afa]{\r\n        border: none;\r\n        border-bottom: 1px solid black;\r\n        position: relative;\r\n        padding-left: 50%;\n}\ntd[data-v-22488afa]:before{\r\n        position: absolute;\r\n        top: 6px;\r\n        left: 6px;\r\n        width: 45%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\ntd[data-v-22488afa]:nth-of-type(1):before{content: \"ID:\";}\ntd[data-v-22488afa]:nth-of-type(2):before{content: \"Name:\";}\ntd[data-v-22488afa]:nth-of-type(3):before{content: \"Phone Number(s):\";}\ntd[data-v-22488afa]:nth-of-type(4):before{content: \"Message:\";}\ntd[data-v-22488afa]:nth-of-type(5):before{content: \"Created At:\";}\ntd[data-v-22488afa]:nth-of-type(6):before{content: \"Scheduled Delivery Time:\";}\n}\r\n", ""]);
 
 // exports
 
@@ -39657,25 +39704,25 @@ var render = function() {
       _c("table", [
         _vm._m(0),
         _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", [_vm._v(_vm._s(_vm.id))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Name))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Phone_numbers))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Message))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.From))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.To))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Created_at))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Schedule))])
-          ])
-        ])
+        _c(
+          "tbody",
+          _vm._l(_vm.users, function(user) {
+            return _c("tr", { key: user.id }, [
+              _c("td", [_vm._v(_vm._s(user.id))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.name))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.phone))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.message))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.created_at))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.timezonestamp))])
+            ])
+          }),
+          0
+        )
       ])
     ])
   ])
@@ -39691,13 +39738,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Name")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Phone Numbers")]),
+        _c("th", [_vm._v("Phone Number(s)")]),
         _vm._v(" "),
         _c("th", [_vm._v("Message")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("From")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("To")]),
         _vm._v(" "),
         _c("th", [_vm._v("Created At")]),
         _vm._v(" "),
@@ -39940,25 +39983,25 @@ var render = function() {
       _c("table", [
         _vm._m(0),
         _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", [_vm._v(_vm._s(_vm.id))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Name))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Phone_numbers))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Message))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.From))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.To))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Created_at))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Schedule))])
-          ])
-        ])
+        _c(
+          "tbody",
+          _vm._l(_vm.users, function(user) {
+            return _c("tr", { key: user.id }, [
+              _c("td", [_vm._v(_vm._s(user.id))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.name))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.phone))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.message))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.created_at))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.timezonestamp))])
+            ])
+          }),
+          0
+        )
       ])
     ])
   ])
@@ -39974,13 +40017,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Name")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Phone Numbers")]),
+        _c("th", [_vm._v("Phone Number(s)")]),
         _vm._v(" "),
         _c("th", [_vm._v("Message")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("From")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("To")]),
         _vm._v(" "),
         _c("th", [_vm._v("Created At")]),
         _vm._v(" "),
@@ -40015,25 +40054,25 @@ var render = function() {
       _c("table", [
         _vm._m(0),
         _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", [_vm._v(_vm._s(_vm.id))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Name))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Phone_numbers))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Message))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.From))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.To))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Created_at))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.Schedule))])
-          ])
-        ])
+        _c(
+          "tbody",
+          _vm._l(_vm.users, function(user) {
+            return _c("tr", { key: user.id }, [
+              _c("td", [_vm._v(_vm._s(user.id))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.name))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.phone))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.message))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.created_at))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.timezonestamp))])
+            ])
+          }),
+          0
+        )
       ])
     ])
   ])
@@ -40049,13 +40088,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Name")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Phone Numbers")]),
+        _c("th", [_vm._v("Phone Number(s)")]),
         _vm._v(" "),
         _c("th", [_vm._v("Message")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("From")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("To")]),
         _vm._v(" "),
         _c("th", [_vm._v("Created At")]),
         _vm._v(" "),

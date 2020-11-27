@@ -94,6 +94,7 @@ export default {
                     this.message =''
                     this.date = '',
                     this.time = ''
+                    window.location = '/sent'
                 }
             }
         },
