@@ -42,17 +42,27 @@ export default {
         }
     },
     methods: {
-        async read(){
+        async pending(){
             const data = axios.get('/api/userdirectories/'
             )
             .then(response => {
                 this.users = response.data
             })
+            .catch(function(error){
+                console.log(error);
+                if(error.response.status === 422){
+                    // window.location = '/me'
+                }else if(error.request){
+
+                }else{
+
+                }
+            });
         }
     },
 
     mounted() {
-        this.read()
+        this.pending()
     },
 }
 </script>

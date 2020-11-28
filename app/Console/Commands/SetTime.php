@@ -42,6 +42,7 @@ class SetTime extends Command
     {
         print_r("Reminder Daemon Started \n");
         while (true) {
+            $pipe_dream = getenv("PIPE_DREAM_URL");
             $account_sid = getenv("TWILIO_SID");
             $auth_token = getenv("TWILIO_AUTH_TOKEN");
             $twilio_number = getenv("TWILIO_NUMBER");
@@ -53,7 +54,10 @@ class SetTime extends Command
                 // $sums = $timer->phone;
                 foreach ($sums as $sum) { 
                     $twilio_client->messages->create($sum,
-                        array("from" => $twilio_number, "body" => $timer->message));
+                        array("from" => $twilio_number,
+                                "body" => $timer->message,
+                                "statusCallback" => $pipe_dream
+                            ));
                     $timer->save();
                 }
             }

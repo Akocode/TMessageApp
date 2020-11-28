@@ -32,12 +32,12 @@
 export default {
     data() {
         return {
-            id: 'none',
-            name: 'none',
-            phone: 'none',
-            message: 'none',
-            created_at: 'none',
-            timezonestamp: 'none',
+            id: '',
+            name: '',
+            phone: '',
+            message: '',
+            created_at: '',
+            timezonestamp: '',
             users: []
         }
     },
@@ -48,6 +48,9 @@ export default {
             .then(response => {
                 this.users = response.data
             })
+            .catch(function(error){
+                console.log(error);
+            });
         }
     },
 

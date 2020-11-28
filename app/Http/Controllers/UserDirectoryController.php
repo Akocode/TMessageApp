@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\UsersDirectory;
 use Twilio\Rest\Client;
 use Carbon\Carbon;
@@ -53,7 +54,8 @@ class UserDirectoryController extends Controller
         $user_directory->timezonestamp = Carbon::parse("{$validateData['date']} {$validateData['time']}");
         $user_directory->save();
 
-        return back();
+        return response($user_directory->jsonSerialize(), Response::HTTP_OK);
+        // return back();
     }
 
     /**
@@ -62,14 +64,16 @@ class UserDirectoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function see(Request $request)
+    public function pending(Request $request)
     {
         $users = UsersDirectory::orderBy('id', 'desc')->get();
         return response()->json($users);
     }
 
-    public function destroy($id)
-    {
-        //
-    }
+    // public function sent()
+    // {
+    //     $pipe_dream = 
+    // }
+
+
 }

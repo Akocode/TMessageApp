@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('userdirectories', 'UserDirectoryController@store');
-Route::get('userdirectories', 'UserDirectoryController@see');
+Route::get('userdirectories', 'UserDirectoryController@pending');

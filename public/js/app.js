@@ -2148,7 +2148,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     }, 3000);
                     _this.name = '', _this.phone = '', _this.message = '';
                     _this.date = '', _this.time = '';
-                    window.location = '/sent';
+                    window.location = '/pending';
                   }
                 }
 
@@ -2238,7 +2238,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   methods: {
-    read: function read() {
+    pending: function pending() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -2249,6 +2249,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 data = axios.get('/api/userdirectories/').then(function (response) {
                   _this.users = response.data;
+                })["catch"](function (error) {
+                  console.log(error);
+
+                  if (error.response.status === 422) {// window.location = '/me'
+                  } else if (error.request) {} else {}
                 });
 
               case 1:
@@ -2261,7 +2266,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   mounted: function mounted() {
-    this.read();
+    this.pending();
   }
 });
 
@@ -2317,12 +2322,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      id: 'none',
-      name: 'none',
-      phone: 'none',
-      message: 'none',
-      created_at: 'none',
-      timezonestamp: 'none',
+      id: '',
+      name: '',
+      phone: '',
+      message: '',
+      created_at: '',
+      timezonestamp: '',
       users: []
     };
   },
@@ -2338,6 +2343,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 data = axios.get('/api/userdirectories/').then(function (response) {
                   _this.users = response.data;
+                })["catch"](function (error) {
+                  console.log(error);
                 });
 
               case 1:
