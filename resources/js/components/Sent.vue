@@ -43,10 +43,12 @@ export default {
     },
     methods: {
         async read(){
-            const data = axios.get('/api/userdirectories/'
-            )
+            var proxy = 'https://cors-anywhere.herokuapp.com/'
+            var target = process.env.MIX_PIPE_DREAM_TARGET
+            axios.get(proxy + target,
+            {headers: {Authorization: process.env.MIX_PIPE_DREAM_AUTH}})
             .then(response => {
-                this.users = response.data
+                console.log(response.data)
             })
             .catch(function(error){
                 console.log(error);

@@ -2333,21 +2333,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   methods: {
     read: function read() {
-      var _this = this;
-
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var data;
+        var proxy, target;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                data = axios.get('/api/userdirectories/').then(function (response) {
-                  _this.users = response.data;
+                proxy = 'https://cors-anywhere.herokuapp.com/';
+                target = "https://api.pipedream.com/v1/sources/dc_ZduxBWN/event_summaries?expand=event";
+                axios.get(proxy + target, {
+                  headers: {
+                    Authorization: "Bearer 8889a8537cdf58e9667496ad50adae2a"
+                  }
+                }).then(function (response) {
+                  console.log(response.data);
                 })["catch"](function (error) {
                   console.log(error);
                 });
 
-              case 1:
+              case 3:
               case "end":
                 return _context.stop();
             }
